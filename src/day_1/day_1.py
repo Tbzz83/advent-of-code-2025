@@ -12,21 +12,20 @@ def turn_dial_2(i: int, dir: str, val: int, R: int) -> tuple[int, int]:
 
         return (i, zeros)
 
-    else:
-        while (i - val) < 0: 
-            # Calculate excess, reset back to R
-            val -= i + 1
+    while (i - val) < 0: 
+        # Calculate excess, reset back to R
+        val -= i + 1
 
-            # Don't increment if i was already sitting at 0
-            zeros += 1 if i > 0 else 0
-            i = R
+        # Don't increment if i was already sitting at 0
+        zeros += 1 if i > 0 else 0
+        i = R
 
-        i = i - val
+    i = i - val
 
-        if i == 0 and val > 0:
-            zeros += 1
+    if i == 0 and val > 0:
+        zeros += 1
 
-        return (i, zeros)
+    return (i, zeros)
 
 # Turns nums, returns new value of i
 def turn_dial(i: int, dir: str, val: int, R: int) -> int:
@@ -37,13 +36,12 @@ def turn_dial(i: int, dir: str, val: int, R: int) -> int:
             i = 0
         return i + val
 
-    else:
-        while (i - val) < 0: 
-            # Calculate excess, reset back to R
-            val -= i + 1
-            i = R
+    while (i - val) < 0: 
+        # Calculate excess, reset back to R
+        val -= i + 1
+        i = R
 
-        return i - val
+    return i - val
 
 def calculate_password_2(rotations: list[str], i: int = 0) -> int:
     nums: list[int] = [i for i in range(100)]
