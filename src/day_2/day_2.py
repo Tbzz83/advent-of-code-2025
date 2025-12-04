@@ -29,11 +29,11 @@ def part_1(input: str) -> int:
     res = 0
 
     input_arr = format_input(input)
-    print(input_arr)
+    #print(input_arr)
     
     for num in input_arr:
         if not is_valid_1(num):
-            print("invalid num: ", num)
+            #print("invalid num: ", num)
             res += int(num)
 
     return res
@@ -42,11 +42,11 @@ def part_2(input: str) -> int:
     res = 0
 
     input_arr = format_input(input)
-    print(input_arr)
+    #print(input_arr)
     
     for num in input_arr:
         if not is_valid_2(num):
-            print("invalid num: ", num)
+            #print("invalid num: ", num)
             res += int(num)
 
     return res
