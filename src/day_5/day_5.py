@@ -1,7 +1,13 @@
+
+
+# In this approach we try and find gaps in the total range, 
+# where the total range is the smallest value from all the ranges
+# up until the largest value inclusive.
 def part_2(ranges: list[list[int]]) -> int:
     min_val = ranges[0][0]
     max_val = ranges[0][1]
 
+    # Get min val and max val for a total range span
     for r in ranges:
         if r[0] < min_val:
             min_val = r[0]
@@ -11,21 +17,23 @@ def part_2(ranges: list[list[int]]) -> int:
 
     ranges.sort()
 
+    # Set current ceiling to largest from first range
     cur_ceil = ranges[0][1]
 
     bad_ids = 0
 
     for r in ranges:
-        #print(r, cur_ceil, cur_ceil-r[0])
+
+        # If the smallest value of the current range is greater than our
+        # current ceiling, that MUST indicate a gap. If that gap is greater than
+        # 1 it means we've broken up a contiguous block. Add that as a bad ID
         if r[0] > cur_ceil and r[0] - cur_ceil > 1:
-            #print("CASE")
             bad_ids += r[0] - cur_ceil - 1
 
         if r[1] > cur_ceil:
             cur_ceil = r[1]
 
-    #print(max_val, min_val)
-
+    # Total range minus bad ids
     return (max_val - min_val + 1) - bad_ids
 
 
