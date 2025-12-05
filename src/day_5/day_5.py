@@ -1,5 +1,3 @@
-
-
 # In this approach we try and find gaps in the total range, 
 # where the total range is the smallest value from all the ranges
 # up until the largest value inclusive.
