@@ -7,6 +7,7 @@ from src.day_6.day_6 import day_6_part_1
 from src.day_6.day_6 import day_6_part_2
 from src.day_7.day_7 import day_7
 from src.day_8.day_8 import day_8
+from src.day_9.day_9 import day_9
 
 def main():
     print("---DAY ONE---")
@@ -20,12 +21,14 @@ def main():
     print("\n---DAY FIVE---")
     #day_5()
     print("\n---DAY SIX---")
-    day_6_part_1()
-    day_6_part_2()
+#    day_6_part_1()
+#    day_6_part_2()
     print("\n---DAY SEVEN---")
     #day_7()
     print("\n---DAY EIGHT---")
     #day_8()
+    print("\n---DAY NINE---")
+    #day_9()
 
 if __name__ == "__main__":
     main()
